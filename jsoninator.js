@@ -8,9 +8,10 @@ const _ = require('underscore'); // the real one! :)
 
 const stringify = function(obj) {
   // your code goes here
+  if (obj === null) {
+    return 'null';
+  }
   switch (typeof obj) {
-    case ('null'): return null;
-    case ('number'): return obj.toString();
     case ('string'): return '\"' + obj + '\"';
     case ('object'): 
       if (Array.isArray(obj)) {
