@@ -2,11 +2,11 @@
 const visitAllNodes = function(node, callback) {
   // Hint: read about DOM nodes and node methods here: https://developer.mozilla.org/en-US/docs/Web/API/Node
   // Your code here
-  callback(node);
-  let child = node.childNodes;
-  if (child.length > 0) {
-    child.forEach(element => visitAllNodes(element, callback));
+  let childNode = node.childNodes;
+  if (childNode.length > 0) {
+    childNode.forEach(element => visitAllNodes(element, callback));
   }
+  return callback(node);
 };
 
 const flattenTreeToArray = function(node) {
